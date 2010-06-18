@@ -60,6 +60,7 @@
 															didSucceed:NO];
 
 	[delegate performSelector:didFailSelector withObject:ticket withObject:error];
+  [ticket release], ticket = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -73,6 +74,7 @@
 															didSucceed:[(NSHTTPURLResponse *)response statusCode] < 400];
 
 	[delegate performSelector:didFinishSelector withObject:ticket withObject:responseData];
+  [ticket release], ticket = nil;
 }
 
 - (void)fetchDataWithRequest:(OAMutableURLRequest *)aRequest delegate:(id)aDelegate didFinishSelector:(SEL)finishSelector didFailSelector:(SEL)failSelector {
