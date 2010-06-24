@@ -133,7 +133,9 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 - (void)_generateNonce {
     CFUUIDRef theUUID = CFUUIDCreate(NULL);
     CFStringRef string = CFUUIDCreateString(NULL, theUUID);
-    CFRelease(theUUID);
+
+    [NSMakeCollectable(theUUID) autorelease];
+
     nonce = (NSString *)string;
 }
 
@@ -161,9 +163,9 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 		}
 	}
     
-    NSArray *sortedPairs = [parameterPairs sortedArrayUsingSelector:@selector(compare:)];
-    [parameterPairs release], parameterPairs = nil;
-    NSString *normalizedRequestParameters = [sortedPairs componentsJoinedByString:@"&"];
+    [parameterPairs sortUsingSelector:@selector(compare:)];
+    NSString *normalizedRequestParameters = [parameterPairs componentsJoinedByString:@"&"];
+    [parameterPairs release];
     
 //	NSLog(@"Normalized: %@", normalizedRequestParameters);
     // OAuth Spec, Section 9.1.2 "Concatenate Request Elements"
