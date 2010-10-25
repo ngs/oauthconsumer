@@ -99,8 +99,7 @@ static unsigned char workspace[64];
     /* Wipe variables */
     a = b = c = d = e = 0;
 
-// MODS THS - silence analyzer warnings about stored values never being read
-#pragma unused(a,b,c,d,e)
+    (void)a; (void)b; (void)c; (void)d; (void)e;
 }
 
 
@@ -163,8 +162,7 @@ unsigned char finalcount[8];
     /* Wipe variables */
     i = j = 0;
 
-// MODS THS - silence analyzer warnings about stored values never being read
-#pragma unused(i,j)
+    (void)i; (void)j;
 
     memset(context->buffer, 0, 64);
     memset(context->state, 0, 20);
