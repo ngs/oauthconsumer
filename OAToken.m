@@ -39,7 +39,7 @@
 
 @implementation OAToken
 
-@synthesize key, secret, session, duration, forRenewal;
+@synthesize key, secret, session, duration, forRenewal, verifier;
 
 #pragma mark init
 
@@ -52,8 +52,8 @@
                   attributes:nil created:nil renewable:NO];
 }
 
-- (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret session:(NSString *)aSession
-		 duration:(NSNumber *)aDuration attributes:(NSMutableDictionary *)theAttributes created:(NSDate *)creation
+- (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret verifier:(NSString *)aVerifier session:(NSString *)aSession
+		 duration:(NSNumber *)aDuration attributes:(NSDictionary *)theAttributes created:(NSDate *)creation
 		renewable:(BOOL)renew {
 	[super init];
 	self.key = aKey;
