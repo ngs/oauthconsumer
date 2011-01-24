@@ -183,15 +183,18 @@
 	[attributes setObject: aAttribute forKey: aKey];
 }
 
-- (NSDictionary*) attributes
-{
-	return attributes;
+- (NSDictionary *)attributes {
+	return [[attributes copy] autorelease];
 }
 
 - (void)setAttributes:(NSDictionary *)theAttributes {
 	[attributes release];
-	attributes = [theAttributes mutableCopy];
-	
+
+	if (theAttributes) {
+		attributes = [[NSMutableDictionary alloc] initWithDictionary:theAttributes];
+	}else {
+		attributes = nil;
+	}
 }
 
 - (BOOL)hasAttributes {
