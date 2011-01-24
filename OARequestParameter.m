@@ -69,4 +69,9 @@
 	return [[[self alloc] initWithName:aName value:aValue] autorelease];
 }
 
+- (void)dealloc{
+	[name release];
+	[value release];
+	[super dealloc];
+}
 @end
