@@ -313,6 +313,7 @@
 				GCC_PREFIX_HEADER = OAuthConsumer_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = OAuthConsumer;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -327,6 +328,7 @@
 				GCC_PREFIX_HEADER = OAuthConsumer_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = OAuthConsumer;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
