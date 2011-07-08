@@ -313,7 +313,7 @@
 				GCC_PREFIX_HEADER = OAuthConsumer_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = OAuthConsumer;
-				SKIP_INSTALL = YES;
+				PUBLIC_HEADERS_FOLDER_PATH = /../OAuthConsumer;
 			};
 			name = Debug;
 		};
@@ -328,7 +328,7 @@
 				GCC_PREFIX_HEADER = OAuthConsumer_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = OAuthConsumer;
-				SKIP_INSTALL = YES;
+				PUBLIC_HEADERS_FOLDER_PATH = /../OAuthConsumer;
 			};
 			name = Release;
 		};
@@ -343,6 +343,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -356,6 +357,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
